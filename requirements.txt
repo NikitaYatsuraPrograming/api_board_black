@@ -1,0 +1,5 @@
+django == 3.0.8
+flake8 == 3.8.3
+djangorestframework == 3.11.0
+djoser == 2.0.3
+psycopg2-binary == 2.8.5
