@@ -1,1 +1,1 @@
-worker: docker-compose up -d --build
+worker: docker-compose up -d --build $PORT
