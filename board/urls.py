@@ -2,7 +2,6 @@ from django.urls import path
 from board.views import (
     PublicationCreateView,
     PublicationsListView,
-    PublicationDetailView,
     PublicationUpdateDestroyView,
     CommentCreateView,
     CommentDetailView,
@@ -19,7 +18,7 @@ urlpatterns = [
         "publication/<int:pk>/reset_amount_of_upvotes",
         AmountOfUpvotesResetView.as_view(),
     ),
-    path("publication/detail/<int:pk>/", PublicationDetailView.as_view()),
+    path("publication/detail/<int:pk>/", PublicationUpdateDestroyView.as_view()),
     path(
         "publication/detail/comments/correction/<int:pk>/",
         CommentUpdateDestroyView.as_view(),
@@ -27,5 +26,4 @@ urlpatterns = [
     path("publication/comments/create/", CommentCreateView.as_view()),
     path("publication/detail/<int:pk>/comments/", comments),
     path("publication/comment/<int:pk>/", CommentDetailView.as_view()),
-    path("publication/correction/<int:pk>/", PublicationUpdateDestroyView.as_view()),
 ]

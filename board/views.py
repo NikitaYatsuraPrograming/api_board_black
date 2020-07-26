@@ -31,18 +31,9 @@ class PublicationCreateView(generics.CreateAPIView):
     permission_classes = (IsAuthenticated,)
 
 
-class PublicationDetailView(generics.RetrieveAPIView):
-    """
-    Вывод одной публикации по id
-    """
-
-    serializer_class = PublicationDetailSerializer
-    queryset = Publications.objects.all()
-
-
 class PublicationUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     """
-    Обновление, удаление данных публикации
+    Просмотр, обновление, удаление данных публикации
     """
 
     serializer_class = PublicationDetailSerializer
